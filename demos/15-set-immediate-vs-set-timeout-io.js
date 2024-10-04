@@ -10,7 +10,7 @@ const secondSetTimeout = () => console.log('setTimeout 2');
 const thirdSetTimeout = () => console.log('setTimeout 3');
 const fourthSetTimeout = () => console.log('setTimeout 4');
 
-fs.readFile('package.json', 'utf8', (err, data) => {
+fs.readFile('../package.json', 'utf8', (err, data) => {
   if (err) {
     return console.log(err);
   }
@@ -23,4 +23,6 @@ fs.readFile('package.json', 'utf8', (err, data) => {
   setImmediate(thirdSetImmediate);
   setImmediate(fourthSetImmediate);
   setTimeout(fourthSetTimeout, 0);
+
+  // Promise.resolve().then(() => console.log('then'))
 });
